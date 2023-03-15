@@ -1,0 +1,23 @@
+Program mendaftar_rawat_inap
+
+pasien
+
+WRITE "pendaftaran" with string
+STORE "jaminan" WITH bpjs ()
+IF bpjs = YES
+STORE "bpjs" WITH ktp/noka bpjs
+ELSE "bpjs" = No
+STORE "bpjs' WITH non bpjs
+
+STORE "pernah berobat" WITH rekam medis ()
+IF rekam medis = YES
+STORE "rekam medis" WITH langsung ke igd
+ELSE "rekam medis" = No
+STORE "rekam medis" WITH membuat rekam medis terlebih dahulu
+
+CAll "rawat inap"
+STORE "pulih" WITH kondisi pasien ()
+IF kondisi pasien = YES
+STORE "kondisi pasien" WITH Boleh pulang
+ELSE "kondisi pasien" = No
+STORE "kondisi pasien" WITH melakukan pengecekan ulang di igd
